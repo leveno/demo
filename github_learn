@@ -1,0 +1,58 @@
+cd ~/.ssh
+ls
+ssh-keygen -t rsa -C “your_email@example.com”
+cat ~/.ssh/id_rsa.pub
+#SSH Key赋值到git中设置好
+#测试SSH Key
+ssh -T git@github.com
+#创建库并初始化
+mkdir learn-git
+cd learn-git
+#查看路径
+pwd
+#创建新仓库
+git init
+
+#复制github一个库
+#<git连接>:主机名，github的clone地址
+git remote add origin <git连接>
+git remote remove origin
+#查看git
+git remote
+#查看版本
+git remote -v
+#推送本地仓库到远程某个分支上
+git push origin master
+
+#需要readme
+touch README
+git commit -m ‘first commit’
+git push -u origin master
+
+#查看状态
+git status
+#查看不同
+git diff readme.txt
+#回退
+git reset --hard HEAD^
+
+
+#需要邮件名称
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+#取消本地目录下关联的远程仓库
+git remote remove origin
+// 创建分支
+git branch dev
+// 查看分支
+git branch
+// 切换分支
+git checkout dev
+// 合并指定分支到当前分支
+git merge dev
+// 提交本地分支到远程
+git push origin dev:master
+// 删除分支
+git branch -d dev
+
